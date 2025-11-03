@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wusool Web MVP
 
-## Getting Started
+موقع ويب أنيق وسريع لحجز خدمات النقل الخاص في أبها والمناطق السياحية.
 
-First, run the development server:
+## المتطلبات
+
+- Node.js >= 20.9.0
+- npm أو yarn
+
+## التثبيت والتشغيل
 
 ```bash
+# تثبيت المكتبات
+npm install
+
+# تشغيل المشروع في وضع التطوير
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# بناء المشروع للإنتاج
+npm run build
+
+# تشغيل المشروع في وضع الإنتاج
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## الميزات
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ✅ تم تنفيذها:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **إعداد المشروع الأساسي**
+   - Next.js 14 مع TypeScript
+   - Tailwind CSS مع ألوان العلامة التجارية
+   - بنية المجلدات المنظمة
+   - إعداد الخطوط (Tajawal للعربية، Inter للإنجليزية)
 
-## Learn More
+2. **نظام الترجمة**
+   - دعم اللغتين العربية والإنجليزية
+   - تبديل اللغة ديناميكي
+   - دعم RTL للعربية
 
-To learn more about Next.js, take a look at the following resources:
+3. **المكونات الأساسية**
+   - Hero Section مع خلفية أنيقة
+   - Services Section مع بطاقات الخدمات
+   - Booking Form مع تكامل WhatsApp
+   - Trust Section مع إحصائيات الثقة
+   - Footer مع روابط التواصل الاجتماعي
+   - FloatingWhatsApp للجوال
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **تكامل WhatsApp**
+   - نموذج حجز متكامل
+   - تنسيق رسائل تلقائي
+   - التحقق من صحة أرقام الهواتف السعودية
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🔄 المطلوب تنفيذه:
 
-## Deploy on Vercel
+- Google Analytics integration
+- تحسين الأداء والـ SEO
+- اختبار المتصفحات المختلفة
+- نشر الموقع على Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## البنية التقنية
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/                    # Next.js App Router
+├── components/            
+│   ├── ui/                # مكونات واجهة المستخدم
+│   ├── sections/          # أقسام الصفحة
+│   └── Layout.tsx         # مكون التخطيط الرئيسي
+├── lib/                   
+│   ├── data.ts           # بيانات الخدمات والمدن
+│   ├── i18n.ts           # نظام الترجمة
+│   └── utils.ts          # وظائف مساعدة
+└── styles/
+    └── globals.css       # الأنماط العامة
+```
+
+## الألوان والتصميم
+
+- **الخلفية الداكنة**: `#0C0C0C`
+- **الذهبي الأساسي**: `#D4AF37`
+- **النص الفاتح**: `#F3F0E9`
+- **الخط العربي**: Tajawal
+- **الخط الإنجليزي**: Inter
+
+## معلومات الاتصال
+
+- **رقم WhatsApp**: 0598330936
+- **المدن المدعومة**: أبها، الطائف، الباحة
+
+## ملاحظات مهمة
+
+1. **إصدار Node.js**: يتطلب المشروع Node.js >= 20.9.0
+2. **الاستجابة**: مُحسّن للجوال أولاً
+3. **إمكانية الوصول**: يدعم معايير WCAG 2.1 AA
+4. **الأداء**: مُحسّن لسرعة التحميل أقل من ثانيتين

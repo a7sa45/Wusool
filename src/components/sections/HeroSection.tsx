@@ -58,10 +58,20 @@ export function HeroSection() {
         </Button>
       </Container>
 
-      {/* Moving car indicator */}
+      {/* Moving car indicator - blue like Google Maps navigation */}
       <div className="absolute bottom-1/4 left-0 w-full overflow-hidden pointer-events-none">
-        <div className="animate-pulse">
-          <div className="w-4 h-2 bg-primary-gold/60 rounded-sm transform translate-x-0 animate-[moveRight_8s_ease-in-out_infinite]" />
+        <div className="relative">
+          {/* Car icon */}
+          <div className="w-3 h-6 bg-blue-600/80 rounded-full transform translate-x-0 animate-[moveRight_12s_ease-in-out_infinite] shadow-lg">
+            <div className="absolute inset-0.5 bg-blue-700/90 rounded-full"></div>
+            {/* Direction indicator */}
+            <div className="absolute -top-1 left-1/2 w-0 h-0 border-l-2 border-l-transparent border-r-2 border-r-transparent border-b-3 border-b-blue-600/80 transform -translate-x-1/2"></div>
+          </div>
+          {/* Route trail */}
+          <div className="absolute top-2 left-0 w-full h-0.5 bg-blue-500/30 animate-[moveRight_12s_ease-in-out_infinite]"
+               style={{
+                 backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 6px, rgba(59, 130, 246, 0.3) 6px, rgba(59, 130, 246, 0.3) 12px)'
+               }} />
         </div>
       </div>
 

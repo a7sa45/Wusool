@@ -131,20 +131,32 @@ textarea:focus-visible {
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* Moving car animation */
+/* Moving car animation - Google Maps style */
 @keyframes moveRight {
   0% {
-    transform: translateX(-100px);
+    transform: translateX(-50px);
     opacity: 0;
   }
-  20% {
+  10% {
     opacity: 1;
   }
-  80% {
+  90% {
     opacity: 1;
   }
   100% {
-    transform: translateX(calc(100vw + 100px));
+    transform: translateX(calc(100vw + 50px));
     opacity: 0;
+  }
+}
+
+/* Pulsing animation for map elements */
+@keyframes mapPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
   }
 }

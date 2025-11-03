@@ -15,12 +15,12 @@ export function FooterSection() {
     },
     {
       name: 'Instagram',
-      url: '#',
+      url: 'https://instagram.com/wusool.sa',
       icon: '📷',
     },
     {
       name: 'TikTok',
-      url: '#',
+      url: 'https://tiktok.com/@wusool.sa',
       icon: '🎵',
     },
     {

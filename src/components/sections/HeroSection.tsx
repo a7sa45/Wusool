@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Button, Container, Heading1, BodyText } from '@/components/ui';
+import { Button, Container, Heading1, BodyText, RoadBackground } from '@/components/ui';
 import { LanguageSwitcher, useLayout } from '@/components/Layout';
 import { scrollToElement } from '@/lib/utils';
 import { trackBookingClick } from '@/lib/analytics';
@@ -16,8 +16,11 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-dark via-primary-dark to-gray-900">
+      {/* Road background pattern */}
+      <RoadBackground />
+      
       {/* Background overlay */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/30" />
       
       {/* Header with logo and language switcher */}
       <header className="absolute top-0 left-0 right-0 z-10 p-6 flex justify-between items-center">
@@ -54,6 +57,13 @@ export function HeroSection() {
           {t.hero.cta}
         </Button>
       </Container>
+
+      {/* Moving car indicator */}
+      <div className="absolute bottom-1/4 left-0 w-full overflow-hidden pointer-events-none">
+        <div className="animate-pulse">
+          <div className="w-4 h-2 bg-primary-gold/60 rounded-sm transform translate-x-0 animate-[moveRight_8s_ease-in-out_infinite]" />
+        </div>
+      </div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">

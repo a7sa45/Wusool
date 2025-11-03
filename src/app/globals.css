@@ -160,3 +160,39 @@ textarea:focus-visible {
     transform: scale(1.05);
   }
 }
+
+/* Mobile time input fixes */
+input[type="time"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: none;
+  min-height: 48px;
+  font-size: 16px; /* Prevents zoom on iOS */
+}
+
+input[type="time"]::-webkit-datetime-edit {
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  color: #D4AF37;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Responsive improvements for mobile */
+@media (max-width: 768px) {
+  input[type="time"] {
+    font-size: 16px !important; /* Prevent zoom on focus */
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  input[type="time"]:focus {
+    transform: none !important;
+    zoom: 1 !important;
+  }
+}

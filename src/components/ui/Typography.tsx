@@ -23,7 +23,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
     const fontFamily = locale === 'ar' ? 'font-arabic' : 'font-inter';
     
     const variants = {
-      h1: 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight',
+      h1: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight',
       h2: 'text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight',
       h3: 'text-lg sm:text-xl md:text-2xl font-semibold leading-tight',
       h4: 'text-base sm:text-lg md:text-xl font-semibold leading-tight',

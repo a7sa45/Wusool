@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Button, Container, Heading1, BodyText, RoadBackground } from '@/components/ui';
+import { Button, Container, Heading1, BodyText, RoadBackground, HeroImage } from '@/components/ui';
 import { LanguageSwitcher, useLayout } from '@/components/Layout';
 import { scrollToElement } from '@/lib/utils';
 import { trackBookingClick } from '@/lib/analytics';
@@ -18,6 +18,9 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-dark via-primary-dark to-gray-900">
       {/* Road background pattern */}
       <RoadBackground />
+      
+      {/* Hero image - car and driver */}
+      <HeroImage />
       
       {/* Background overlay */}
       <div className="absolute inset-0 bg-black/30" />

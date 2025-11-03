@@ -216,21 +216,32 @@ export function BookingSection() {
                 type="time"
                 value={formData.time}
                 onChange={(e) => handleInputChange('time', e.target.value)}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-text-light focus:border-primary-gold focus:ring-1 focus:ring-primary-gold outline-none transition-colors"
+                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-text-light focus:border-primary-gold focus:ring-1 focus:ring-primary-gold outline-none transition-colors min-h-[48px] text-base"
+                style={{ 
+                  WebkitAppearance: 'none',
+                  MozAppearance: 'textfield'
+                }}
                 required
               />
             </div>
           </div>
 
           {/* Passengers */}
-          <Input
-            type="number"
-            min="1"
-            max="8"
+          <Select
             label={t.booking.passengers}
             value={formData.passengers}
             onChange={(e) => handleInputChange('passengers', e.target.value)}
-            placeholder={locale === 'ar' ? 'عدد الركاب' : 'Number of passengers'}
+            options={[
+              { value: '', label: locale === 'ar' ? 'اختر عدد الركاب' : 'Select passengers' },
+              { value: '1', label: locale === 'ar' ? '1 راكب' : '1 passenger' },
+              { value: '2', label: locale === 'ar' ? '2 راكب' : '2 passengers' },
+              { value: '3', label: locale === 'ar' ? '3 ركاب' : '3 passengers' },
+              { value: '4', label: locale === 'ar' ? '4 ركاب' : '4 passengers' },
+              { value: '5', label: locale === 'ar' ? '5 ركاب' : '5 passengers' },
+              { value: '6', label: locale === 'ar' ? '6 ركاب' : '6 passengers' },
+              { value: '7', label: locale === 'ar' ? '7 ركاب' : '7 passengers' },
+            ]}
+            placeholder={locale === 'ar' ? 'اختر عدد الركاب' : 'Select number of passengers'}
             locale={locale}
           />
 

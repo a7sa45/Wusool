@@ -15,30 +15,42 @@ export const metadata: Metadata = {
     canonical: "https://wusool.sa",
   },
   openGraph: {
-    title: "وصول - خدمات النقل الخاص",
-    description: "احجز سائقًا خاصًا في أبها والمناطق السياحية. خدمة نقل فاخرة وآمنة مع سائقين محترفين.",
+    title: "وصول - خدمات النقل الخاص | Wusool Private Transport",
+    description: "احجز سائقًا خاصًا في أبها والمناطق السياحية. خدمة نقل فاخرة وآمنة مع سائقين محترفين. Book private drivers in Abha with professional luxury transport services.",
     url: "https://wusool.sa",
     siteName: "Wusool",
     locale: "ar_SA",
     type: "website",
     images: [
       {
-        url: "https://wusool.sa/og-image.jpg",
+        url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "وصول - خدمات النقل الخاص",
+        alt: "وصول - خدمات النقل الخاص في أبها",
+        type: "image/svg+xml",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "وصول - خدمات النقل الخاص",
-    description: "احجز سائقًا خاصًا في أبها والمناطق السياحية. خدمة نقل فاخرة وآمنة مع سائقين محترفين.",
-    images: ["https://wusool.sa/og-image.jpg"],
+    description: "احجز سائقًا خاصًا في أبها والمناطق السياحية 📱 0598330936",
+    images: ["/og-image.svg"],
+    creator: "@wusool_sa",
+    site: "@wusool_sa",
   },
   viewport: "width=device-width, initial-scale=1",
   themeColor: "#D4AF37",
   manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/wusool-logo.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      { url: "/wusool-logo.svg", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default function RootLayout({

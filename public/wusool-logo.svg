@@ -1,0 +1,19 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#0C0C0C" stroke="#D4AF37" stroke-width="10"/>
+  
+  <!-- Road pattern -->
+  <path d="M30 100 Q100 60 170 100" stroke="#D4AF37" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M30 120 Q100 80 170 120" stroke="#D4AF37" stroke-width="2" fill="none" opacity="0.4"/>
+  
+  <!-- Car icon -->
+  <rect x="85" y="90" width="30" height="15" rx="7" fill="#D4AF37"/>
+  <circle cx="92" cy="105" r="3" fill="#0C0C0C"/>
+  <circle cx="108" cy="105" r="3" fill="#0C0C0C"/>
+  
+  <!-- Arabic text "وصول" -->
+  <text x="100" y="140" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#D4AF37">وصول</text>
+  
+  <!-- English text "Wusool" -->
+  <text x="100" y="165" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#D4AF37" opacity="0.8">WUSOOL</text>
+</svg>

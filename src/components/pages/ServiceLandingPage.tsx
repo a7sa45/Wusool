@@ -4,6 +4,7 @@ import React from 'react';
 import { Section, Heading1, Heading2, Heading3, BodyText, Button, Container } from '@/components/ui';
 import { LayoutProvider } from '@/components/Layout';
 import { BookingSection } from '@/components/sections/BookingSection';
+import { FooterSection } from '@/components/sections/FooterSection';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
 import { scrollToElement } from '@/lib/utils';
 import { trackBookingClick } from '@/lib/analytics';
@@ -199,6 +200,9 @@ export function ServiceLandingPage({ city, service, locale }: ServiceLandingPage
         
         {/* Booking Section */}
         <BookingSection />
+        
+        {/* Footer */}
+        <FooterSection />
         
         {/* Floating WhatsApp */}
         <FloatingWhatsApp />

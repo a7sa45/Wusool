@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
-import { Button, Section, Heading2, BodyText, Select, Input, Textarea } from '@/components/ui';
+import { Button, Section, Heading2, BodyText, Select, Input, Textarea, SelectionCard, TimePicker } from '@/components/ui';
 import { useLayout } from '@/components/Layout';
 import { SERVICES, CITIES, WHATSAPP_NUMBER } from '@/lib/data';
 import { validateSaudiPhone, formatPhoneForWhatsApp } from '@/lib/utils';
@@ -207,39 +207,51 @@ export function BookingSection() {
         <form onSubmit={handleSubmit} className="min-h-[300px]">
           {/* Step 1: Service Type */}
           {currentStep === 1 && (
-            <div className="animate-fade-in-up">
-              <Select
-                label={t.booking.serviceType}
-                value={formData.serviceType}
-                onChange={(e) => handleInputChange('serviceType', e.target.value)}
-                options={[
-                  { value: '', label: locale === 'ar' ? 'اختر الخدمة' : 'Select Service' },
-                  ...SERVICES.map((service) => ({
-                    value: service.id,
-                    label: locale === 'ar' ? service.nameAr : service.nameEn
-                  }))
-                ]}
-                placeholder={locale === 'ar' ? 'اختر الخدمة' : 'Select Service'}
-                locale={locale}
-                required
-              />
+            <div className="animate-fade-in-up space-y-3 sm:space-y-4">
+              <label className={`block text-base sm:text-lg font-medium text-text-light mb-4 ${
+                locale === 'ar' ? 'font-arabic' : 'font-inter'
+              }`}>
+                {t.booking.serviceType}
+              </label>
+              {SERVICES.map((service) => (
+                <SelectionCard
+                  key={service.id}
+                  icon={service.icon}
+                  title={locale === 'ar' ? service.nameAr : service.nameEn}
+                  description={locale === 'ar' ? service.descriptionAr : service.descriptionEn}
+                  isSelected={formData.serviceType === service.id}
+                  onClick={() => handleInputChange('serviceType', service.id)}
+                  locale={locale}
+                />
+              ))}
             </div>
           )}
 
           {/* Step 2: City */}
           {currentStep === 2 && (
-            <div className="animate-fade-in-up">
-              <Select
-                label={t.booking.city}
-                value={formData.city}
-                onChange={(e) => handleInputChange('city', e.target.value)}
-                options={CITIES.map((city) => ({
-                  value: city.id,
-                  label: locale === 'ar' ? city.nameAr : city.nameEn
-                }))}
-                locale={locale}
-                required
-              />
+            <div className="animate-fade-in-up space-y-3 sm:space-y-4">
+              <label className={`block text-base sm:text-lg font-medium text-text-light mb-4 ${
+                locale === 'ar' ? 'font-arabic' : 'font-inter'
+              }`}>
+                {t.booking.city}
+              </label>
+              {CITIES.map((city) => (
+                <SelectionCard
+                  key={city.id}
+                  icon={city.id === 'abha' ? '🏔️' : city.id === 'taif' ? '🌹' : '🌳'}
+                  title={locale === 'ar' ? city.nameAr : city.nameEn}
+                  description={
+                    city.id === 'abha' 
+                      ? (locale === 'ar' ? 'عروس الجنوب' : 'Bride of the South')
+                      : city.id === 'taif'
+                      ? (locale === 'ar' ? 'مدينة الورود' : 'City of Roses')
+                      : (locale === 'ar' ? 'لؤلؤة الجنوب' : 'Pearl of the South')
+                  }
+                  isSelected={formData.city === city.id}
+                  onClick={() => handleInputChange('city', city.id)}
+                  locale={locale}
+                />
+              ))}
             </div>
           )}
 
@@ -269,21 +281,15 @@ export function BookingSection() {
           {/* Step 4: Time */}
           {currentStep === 4 && (
             <div className="animate-fade-in-up">
-              <label className={`block text-sm font-medium text-text-light mb-2 ${
+              <label className={`block text-base sm:text-lg font-medium text-text-light mb-4 ${
                 locale === 'ar' ? 'font-arabic' : 'font-inter'
               }`}>
                 {t.booking.time}
               </label>
-              <input
-                type="time"
+              <TimePicker
                 value={formData.time}
-                onChange={(e) => handleInputChange('time', e.target.value)}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-text-light focus:border-primary-gold focus:ring-1 focus:ring-primary-gold outline-none transition-colors min-h-[48px] text-base"
-                style={{ 
-                  WebkitAppearance: 'none',
-                  MozAppearance: 'textfield'
-                }}
-                required
+                onChange={(time) => handleInputChange('time', time)}
+                locale={locale}
               />
             </div>
           )}

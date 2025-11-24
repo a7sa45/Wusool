@@ -204,7 +204,15 @@ export function BookingSection() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="min-h-[300px]">
+        <form 
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (currentStep === totalSteps) {
+              handleSubmit(e);
+            }
+          }} 
+          className="min-h-[300px]"
+        >
           {/* Step 1: Service Type */}
           {currentStep === 1 && (
             <div className="animate-fade-in-up space-y-3 sm:space-y-4">

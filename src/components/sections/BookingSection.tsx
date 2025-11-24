@@ -59,7 +59,11 @@ export function BookingSection() {
     }
   };
 
-  const nextStep = () => {
+  const nextStep = (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     if (currentStep < totalSteps) {
       setCurrentStep(prev => prev + 1);
     }

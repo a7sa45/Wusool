@@ -82,7 +82,7 @@ export function BookingSection() {
       case 4:
         return formData.time !== '';
       case 5:
-        return validateSaudiPhone(formData.phone);
+        return formData.phone.trim() !== '' && validateSaudiPhone(formData.phone);
       default:
         return true;
     }
@@ -312,25 +312,40 @@ export function BookingSection() {
 
           {/* Step 6: Passengers & Notes */}
           {currentStep === 6 && (
-            <div className="animate-fade-in-up space-y-4">
-              <Select
-                label={t.booking.passengers}
-                value={formData.passengers}
-                onChange={(e) => handleInputChange('passengers', e.target.value)}
-                options={[
-                  { value: '', label: locale === 'ar' ? 'اختر عدد الركاب (اختياري)' : 'Select passengers (optional)' },
-                  { value: '1', label: locale === 'ar' ? '1 راكب' : '1 passenger' },
-                  { value: '2', label: locale === 'ar' ? '2 راكب' : '2 passengers' },
-                  { value: '3', label: locale === 'ar' ? '3 ركاب' : '3 passengers' },
-                  { value: '4', label: locale === 'ar' ? '4 ركاب' : '4 passengers' },
-                  { value: '5', label: locale === 'ar' ? '5 ركاب' : '5 passengers' },
-                  { value: '6', label: locale === 'ar' ? '6 ركاب' : '6 passengers' },
-                  { value: '7', label: locale === 'ar' ? '7 ركاب' : '7 passengers' },
-                ]}
-                placeholder={locale === 'ar' ? 'اختر عدد الركاب' : 'Select number of passengers'}
-                locale={locale}
-              />
+            <div className="animate-fade-in-up space-y-6">
+              {/* Passengers Selection */}
+              <div>
+                <label className={`block text-base sm:text-lg font-medium text-text-light mb-4 ${
+                  locale === 'ar' ? 'font-arabic' : 'font-inter'
+                }`}>
+                  {t.booking.passengers} {locale === 'ar' ? '(اختياري)' : '(Optional)'}
+                </label>
+                <div className="grid grid-cols-4 sm:grid-cols-7 gap-2 sm:gap-3">
+                  {[1, 2, 3, 4, 5, 6, 7].map((num) => (
+                    <button
+                      key={num}
+                      type="button"
+                      onClick={() => handleInputChange('passengers', num.toString())}
+                      className={`
+                        px-3 py-4 sm:px-4 sm:py-6 rounded-lg border-2 transition-all duration-200 flex flex-col items-center justify-center gap-1
+                        ${formData.passengers === num.toString()
+                          ? 'border-primary-gold bg-primary-gold/10 text-primary-gold shadow-md'
+                          : 'border-gray-700 bg-gray-800/50 text-text-light hover:border-primary-gold/50 hover:bg-gray-800'
+                        }
+                      `}
+                    >
+                      <span className="text-2xl sm:text-3xl">👥</span>
+                      <span className={`text-sm sm:text-base font-semibold ${
+                        locale === 'ar' ? 'font-arabic' : 'font-inter'
+                      }`}>
+                        {num}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
 
+              {/* Notes */}
               <Textarea
                 label={t.booking.notes}
                 value={formData.notes}

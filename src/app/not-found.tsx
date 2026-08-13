@@ -54,7 +54,7 @@ export default function NotFound() {
             </Button>
           </Link>
           
-          <Link href="https://wa.me/966598330936?text=مرحبًا، أحتاج مساعدة في الموقع">
+          <Link href="https://wa.me/966533578337?text=مرحبًا، أحتاج مساعدة في الموقع">
             <Button 
               variant="outline" 
               size="lg" 
@@ -75,10 +75,10 @@ export default function NotFound() {
           >
             هل تحتاج مساعدة؟ تواصل معنا على رقم{' '}
             <a 
-              href="tel:+966598330936" 
+              href="tel:+966533578337" 
               className="text-primary-gold hover:text-primary-gold/80 transition-colors"
             >
-              0598330936
+              0533578337
             </a>
           </BodyText>
         </div>
@@ -106,7 +106,7 @@ export default function NotFound() {
             </Link>{' '}
             or{' '}
             <a 
-              href="https://wa.me/966598330936?text=Hello, I need help with the website"
+              href="https://wa.me/966533578337?text=Hello, I need help with the website"
               className="text-primary-gold hover:text-primary-gold/80 transition-colors"
             >
               contact us on WhatsApp

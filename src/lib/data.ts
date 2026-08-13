@@ -48,4 +48,4 @@ export const CITIES = [
   { id: 'baha', nameAr: 'الباحة', nameEn: 'Baha' }
 ];
 
-export const WHATSAPP_NUMBER = '966598330936';
+export const WHATSAPP_NUMBER = '966533578337';

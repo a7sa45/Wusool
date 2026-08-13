@@ -121,7 +121,7 @@ export const translations: Record<Locale, Translations> = {
       },
     },
     footer: {
-      contact: 'هل لديك استفسار؟ تواصل معنا مباشرة: 📞 0598330936',
+      contact: 'هل لديك استفسار؟ تواصل معنا مباشرة: 📞 0533578337',
       followUs: 'تابعنا على:',
       copyright: '© 2025 وصول. جميع الحقوق محفوظة.',
     },

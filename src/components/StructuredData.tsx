@@ -9,7 +9,7 @@ export function StructuredData() {
     "name": "وصول - Wusool",
     "description": "خدمات النقل الخاص والسائقين المحترفين في أبها والمناطق السياحية",
     "url": "https://wusool.sa",
-    "telephone": "+966598330936",
+    "telephone": "+966533578337",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "أبها",
@@ -75,12 +75,12 @@ export function StructuredData() {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+966598330936",
+      "telephone": "+966533578337",
       "contactType": "customer service",
       "availableLanguage": ["Arabic", "English"]
     },
     "sameAs": [
-      "https://wa.me/966598330936",
+      "https://wa.me/966533578337",
       "https://instagram.com/wusool.sa",
       "https://tiktok.com/@wusool.sa"
     ]

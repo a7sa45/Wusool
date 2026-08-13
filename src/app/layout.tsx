@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "وصول - خدمات النقل الخاص",
-    description: "احجز سائقًا خاصًا في أبها والمناطق السياحية 📱 0598330936",
+    description: "احجز سائقًا خاصًا في أبها والمناطق السياحية 📱 0533578337",
     images: ["/og-image.svg"],
     creator: "@wusool_sa",
     site: "@wusool_sa",
